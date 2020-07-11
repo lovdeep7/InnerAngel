@@ -1,0 +1,17 @@
+<br><br>
+<h2 class="page-header">Search Your Reflection</h2>
+<br><br>
+<form action="/books" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Title</label>
+      <input type="text" name="title" value="<%= searchOptions.title %>">
+    </div>
+  </div>
+  <br>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+  <br><br>
+<%- include('../partials/bookGrid', { books: books, large: true }) %>

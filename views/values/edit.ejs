@@ -1,0 +1,9 @@
+<br><br>
+<h2 class="page-header">Edit value</h2>
+<form action="/values/<%= value.id %>?_method=PUT" method="POST">
+  <%- include('_form_fields') %>
+  <div class="form-row form-row-end btn-row">
+    <a class="btn btn-danger" href="/values/<%= value.id %>">Cancel</a>
+    <button class="btn btn-primary" type="submit">Update</button>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<br><br>
+<h2 class="page-header"><%= book.title %></h2>
+<div class="book-details">
+  <div>
+    <img class="book-cover" src="<%= book.coverImagePath %>">
+    <div class="book-details-btn-grid">
+      <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
+      <a class="btn btn-primary book-details-value-button" href="/values/<%= book.value.id %>">View value</a>
+    </div>
+  </div>
+  <div class="book-details-grid">
+    <div class="book-details-label">Value you want to improve on:</div>
+    <div><%= book.value.name %></div>
+    <div class="book-details-label">Today's Date</div>
+    <div><%= book.publishDate.toDateString() %></div>
+    <div class="book-details-label">Happiness Level (out of 10)</div>
+    <div><%= book.pageCount %></div>
+    <div class="book-details-label">Description:</div>
+    <div><%= book.description %></div>
+  </div>
+</div>

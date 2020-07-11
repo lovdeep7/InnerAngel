@@ -1,0 +1,41 @@
+<br>
+<div class="form-row">
+  <div class="form-item">
+    <label>Title</label>
+    <input type="text" name="title" value="<%= book.title %>">
+  </div>
+  <div class="form-item">
+    <label>Value you want to improve on</label>
+    <select name="value">
+      <% values.forEach(value => { %>
+        <% if (value.id === book.value) { %>
+          <option selected label="<%= value.name %>" value="<%= value.id %>">
+        <% } else { %>
+          <option label="<%= value.name %>" value="<%= value.id %>">
+        <% } %>
+      <% }) %>
+    </select>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-item">
+    <label>Today's Date</label>
+    <input type="date" name="publishDate"
+          value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+  </div>
+  <div class="form-item">
+    <label>Happiness Level (out of 10)</label>
+    <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-item form-item-no-grow">
+    <label>Cover</label>
+    <input type="file" name="cover" class="book-cover filepond">
+  </div>
+  <div class="form-item">
+    <label>Description</label>
+    <textarea name="description"><%= book.description %></textarea>
+  </div>
+</div>

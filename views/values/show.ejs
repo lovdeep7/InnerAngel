@@ -1,0 +1,12 @@
+<br><br>
+<h2 class="page-header"><%= value.name %></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/values/<%= value.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm',
+              { url: `/values/${value.id}` }) %>
+</div>
+<% if (booksByValue.length > 0) { %>
+  <h2 class="page-header">Books By value</h2>
+  <%- include('../partials/bookGrid', { books: booksByValue }) %>
+<% } %>
+

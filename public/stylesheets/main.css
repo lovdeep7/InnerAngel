@@ -1,0 +1,378 @@
+@import 'shared/variables.css';
+@import 'shared/fonts.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+@import 'shared/author.css';
+@import 'shared/books.css';
+
+:root {
+  font-size: 20px;
+  color:white ;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.inner-container {
+  margin: 0 2rem;
+}
+
+.page-header {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.error-message {
+  color: hsl(var(--color-danger-hue), 100%, 50%);
+}
+
+.value-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.value-name {
+  font-size: 1.5rem;
+}
+
+div.grid {
+    margin: 7em auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5em;
+    max-width: 1140px;
+}
+
+div.main--card {
+    perspective: 800px;
+    transform-style: preserve-3d;
+    position: relative;
+    height: 24em;
+}
+
+div.front, div.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 500ms;
+    background-color: #545353;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+div.main--card:hover div.front {
+    transform: rotateY(-180deg);
+}
+
+div.main--card:hover div.back {
+    transform: rotateY(0deg);
+}
+
+div.card--two:hover div.front {
+    transform: rotateX(-180deg);
+}
+
+div.card--two:hover div.back {
+    transform: rotateX(0deg);
+}
+
+div.card--two div.front {
+    transform: rotateX(0);
+}
+
+div.card--two div.back {
+    transform: rotateX(180deg);
+}
+
+
+div.front {
+    transform: rotateY(0);
+}
+
+div.topBg {
+    position: relative;
+    width: 100%;
+    height: 7em;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 0 100%);
+}
+
+div.img__wrapper {
+    position: relative;
+    text-align: center;
+    margin-top: -65px;
+}
+
+
+
+div.name {
+    margin-top: 1em;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+div.title {
+    margin-top: .5em;
+    text-align: center;
+}
+div.bottomBg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 7em;
+    clip-path: polygon(0 2em, 100% 0, 100% 100%, 0 100%);
+}
+
+p.summary {
+    padding: 1.5em;
+}
+
+/* HEIGHT???*/
+div.back {
+    color: #fff;
+    background-color: #FFE0AC;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+}
+
+h1.skills {
+    text-align: center;
+    font-weight: 300;
+    margin: 1.5em 0;
+}
+
+div.back ul {
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 4em;
+    padding: 0;
+}
+
+div.back li {
+    text-align: center;
+}
+
+div.back li + li {
+    margin-top: .5em;
+}
+
+div.social {
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+div.social a {
+    color: #fff;
+    padding: .5em;
+}
+
+div.social i {
+   transition: color 200ms ease-out; 
+}
+
+div.social a:hover i {
+    color: grey;
+}
+
+div.social a + a {
+    border-left: 2px solid white;
+    
+}
+
+div.button--wrap {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 1em;
+}
+
+button {
+    color: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 1em 2em; 
+    background-image: linear-gradient(to bottom,#e54b4b);
+    box-shadow: 2px 3px 2px rgba(0,0,0,.7);
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+}
+
+button:active {
+    transform: translate(1px, 2px);
+}
+
+*, body{
+    padding:0; 
+    margin:0;
+    font-family: "Lucida Console", Monaco, monospace	
+    ;
+  }
+  
+  /* responsive nav bar*/
+  nav{
+    width:100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    padding: 0 50px;
+    box-sizing:border-box;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav ul{
+    padding:0;
+    margin:0;
+    float: right;
+  }
+  
+  nav h1{
+    margin:0;
+    padding: 15px 20px;
+    float: left;
+  }
+  
+  nav h1 a{
+    color: #FFF;
+    text-decoration:none;
+  }
+  
+  nav ul li{
+    list-style:none;
+    display: inline-block;
+    padding:20px 30px;
+    transition: .5s;
+  }
+  
+  nav ul li:hover{
+    background-color:#e54b4b;
+  }
+  
+  nav ul li a{
+    color: #FFF;
+    text-decoration:none;
+  }
+  
+  .responsive-bar{
+    width:100%;
+    padding: 10px 30px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    box-sizing:border-box;
+    display:none;
+  }
+  
+  .responsive-bar h3{
+    margin:0; 
+    padding:0 3px;
+    float:left;
+  }
+  
+  .responsive-bar h3 a{
+    color:#FFF;
+    text-decoration:none;
+  }
+  
+  .responsive-bar h4{
+    margin:0; 
+    padding:5px 10px;
+    background:#3cb0fd;
+    color:#FFF;
+    float:right;
+    text-transform: uppercase;
+    cursor:pointer;
+  }
+  
+  @media (max-width: 900px){
+    .responsive-bar{
+      display:block;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav{
+      display:none;
+      padding:0;
+    }
+    
+    nav h1{
+      display:none;
+      float:none;
+    }
+    
+    nav ul{
+      float:none;
+    }
+    
+    nav ul li{
+      display:block;
+      width:100%;
+      text-align:center;
+      box-sizing:border-box;
+    }
+  }
+  
+
+  /* body of the home page */
+  
+  .content{
+    color:#FFF;
+    position:relative;
+    top:18%;
+    width:65%;
+    margin: 0 auto;
+    text-align:center;
+    padding: 20px;
+  }
+  
+  img{
+    width:8em;
+  }
+  
+  .content h1, .content p{
+    padding:15px;
+  }
+  
+  .content p{
+    font-size: 20px;
+  }
+  
+  .content button{
+    color:#FFF;
+    background:#e54b4b;
+    border:none;
+    outline:none;
+    transition:.5s;
+    text-transform:uppercase;
+    border-radius:3px;
+  }
+  
+  .content button:hover{
+    background:#0D95FF;
+    cursor:pointer;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,28 @@
+<br><br>
+<h2 class="page-header">Search values</h2>
+<br><br>
+<form action="/values" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Value</label>
+      <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+  </div>
+  <br>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br><br>
+<% values.forEach(value => { %>
+  <div class="value-row">
+    <div class="value-name"><%= value.name %></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/values/<%= value.id %>">View</a>
+      <a class="btn btn-primary" href="/values/<%= value.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm',
+                  { url: `/values/${value.id}` }) %>
+    </div>
+  </div>
+<% }) %>
+
