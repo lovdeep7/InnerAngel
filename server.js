@@ -37,6 +37,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 const mongoose = require('mongoose')
+const { request } = require('express')
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', error => console.error(error))
@@ -126,5 +127,13 @@ function checkNotAuthenticated(req,res,next){
   }
   next()
 }
+
+var reqTimer = setTimeout(function wakeUP() {
+  request("https://innerangel.herokuapp.com/", function(){
+    console.log("WAKE UP DYNO");
+});
+return reqTimer = setTimeout(wakeUp, 1200000);
+  }, 1200000);
+
 app.listen(process.env.PORT || 9000)
 
