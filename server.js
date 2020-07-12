@@ -20,6 +20,8 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
+const port = process.env.PORT || 8080;
+
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
@@ -135,5 +137,7 @@ var reqTimer = setTimeout(function wakeUP() {
 return reqTimer = setTimeout(wakeUp, 1200000);
   }, 1200000);
 
-app.listen(process.env.PORT || 9000)
+app.listen(port, function() {
+  console.log('running');
+})
 
